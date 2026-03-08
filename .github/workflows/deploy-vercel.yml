@@ -1,0 +1,83 @@
+name: Deploy Tool to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Extract Tool Info
+        run: |
+          REPO_NAME=${GITHUB_REPOSITORY##*/}
+          SLUG=${REPO_NAME}
+
+          DOMAIN="${SLUG}.tools.jagodana.com"
+
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+          echo "SLUG=$SLUG" >> $GITHUB_ENV
+          echo "DOMAIN=$DOMAIN" >> $GITHUB_ENV
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel
+
+      - name: Pull Vercel Environment
+        run: |
+          vercel pull 
+          --yes 
+          --environment=production 
+          --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project
+        run: |
+          vercel build 
+          --prod 
+          --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project
+        id: deploy
+        run: |
+          DEPLOYMENT_URL=$(vercel deploy 
+          --prebuilt 
+          --prod 
+          --token=${{ secrets.VERCEL_TOKEN }})
+
+          echo "DEPLOYMENT_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
+
+      - name: Fetch Vercel Project ID
+        run: |
+          PROJECT_ID=$(curl -s 
+          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" 
+          "https://api.vercel.com/v9/projects/${REPO_NAME}?teamId=${{ secrets.VERCEL_TEAM_ID }}" 
+          | jq -r '.id')
+
+          echo "PROJECT_ID=$PROJECT_ID" >> $GITHUB_ENV
+
+      - name: Attach Custom Domain
+        run: |
+          curl -X POST 
+          "https://api.vercel.com/v10/projects/${PROJECT_ID}/domains?teamId=${{ secrets.VERCEL_TEAM_ID }}" 
+          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" 
+          -H "Content-Type: application/json" 
+          -d '{"name":"'"$DOMAIN"'"}' || true
+
+      - name: Output Deployment Info
+        run: |
+          echo "Tool deployed successfully!"
+          echo "Domain: https://$DOMAIN"
+          echo "Deployment URL: $DEPLOYMENT_URL"
