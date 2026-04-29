@@ -1,174 +1,183 @@
 export const siteConfig = {
-  // ====== CUSTOMIZE THESE FOR EACH TOOL ======
-  name: "{{TOOL_NAME}}",
-  title: "{{TOOL_TITLE}}",
-  description: "{{TOOL_DESCRIPTION}}",
-  url: "https://{{TOOL_SLUG}}.jagodana.com",
+  name: "HTTP Cache Headers Generator",
+  title: "HTTP Cache Headers Generator — Build Cache-Control Headers Instantly",
+  description:
+    "Generate correct Cache-Control headers for HTML, JS, images, fonts, and APIs. Configure max-age, stale-while-revalidate, immutable, and more. Get the header string + plain-English explanation.",
+  url: "https://http-cache-headers-generator.tools.jagodana.com",
   ogImage: "/opengraph-image",
 
   // Header
-  headerIcon: "Wrench", // lucide-react icon name (e.g., Image, Map, Code, Palette, Globe, FileSearch)
-  // Brand gradient colors for Tailwind are in globals.css (--brand / --brand-accent)
-  // Use text-brand, from-brand, to-brand-accent etc. in components
-  brandAccentColor: "#06b6d4", // hex accent for OG image gradient (must match --brand-accent in globals.css)
+  headerIcon: "Server",
+  brandAccentColor: "#6366f1", // indigo-500 (must match --brand-accent in globals.css)
 
   // SEO
   keywords: [
-    "{{KEYWORD_1}}",
-    "{{KEYWORD_2}}",
-    "{{KEYWORD_3}}",
+    "cache-control header generator",
+    "HTTP cache headers",
+    "cache-control builder",
+    "max-age generator",
+    "stale-while-revalidate",
+    "HTTP caching tool",
+    "CDN cache headers",
+    "browser cache headers",
+    "cache policy generator",
+    "HTTP headers tool",
   ],
-  applicationCategory: "DeveloperApplication", // or "DesignApplication", "UtilitiesApplication"
+  applicationCategory: "DeveloperApplication",
 
   // Theme
-  themeColor: "#10b981", // used in manifest and meta tags
+  themeColor: "#3b82f6", // blue-500
 
   // Branding
   creator: "Jagodana",
   creatorUrl: "https://jagodana.com",
   twitterHandle: "@jagodana",
 
-  // Social Profiles (for Organization schema sameAs)
   socialProfiles: [
     "https://twitter.com/jagodana",
-    // Add more: LinkedIn, YouTube, etc.
   ],
 
-  // Links
   links: {
-    github: "https://github.com/Jagodana-Studio-Private-Limited/{{TOOL_SLUG}}",
+    github: "https://github.com/Jagodana-Studio-Private-Limited/http-cache-headers-generator",
     website: "https://jagodana.com",
   },
 
-  // Footer
   footer: {
-    about: "{{FOOTER_ABOUT_DESCRIPTION}}",
+    about:
+      "Free tool to generate correct HTTP Cache-Control headers for any resource type. No signup, no server — runs entirely in your browser.",
     featuresTitle: "Features",
     features: [
-      "{{FEATURE_1}}",
-      "{{FEATURE_2}}",
-      "{{FEATURE_3}}",
-      "{{FEATURE_4}}",
+      "Resource-type presets",
+      "All Cache-Control directives",
+      "Plain-English explanations",
+      "Nginx & Apache config output",
     ],
   },
 
-  // Hero Section
   hero: {
-    badge: "{{HERO_BADGE_TEXT}}",
-    titleLine1: "{{HERO_TITLE_LINE_1}}",
-    titleGradient: "{{HERO_TITLE_GRADIENT_TEXT}}",
-    subtitle: "{{HERO_SUBTITLE}}",
+    badge: "Free Developer Tool",
+    titleLine1: "Generate HTTP",
+    titleGradient: "Cache-Control Headers",
+    subtitle:
+      "Configure Cache-Control headers for HTML pages, JS/CSS bundles, images, fonts, and API responses. Get the exact directive string plus a plain-English breakdown of what each setting does.",
   },
 
-  // Feature Cards (shown on homepage)
   featureCards: [
     {
-      icon: "{{FEATURE_ICON_1}}",
-      title: "{{FEATURE_CARD_TITLE_1}}",
-      description: "{{FEATURE_CARD_DESC_1}}",
+      icon: "⚡",
+      title: "Resource Presets",
+      description:
+        "Start from a sensible baseline for HTML, CSS/JS, images, fonts, or API responses — then fine-tune.",
     },
     {
-      icon: "{{FEATURE_ICON_2}}",
-      title: "{{FEATURE_CARD_TITLE_2}}",
-      description: "{{FEATURE_CARD_DESC_2}}",
+      icon: "🔍",
+      title: "Plain-English Explanations",
+      description:
+        "Every directive gets a clear explanation of what it does and how browsers and CDNs interpret it.",
     },
     {
-      icon: "{{FEATURE_ICON_3}}",
-      title: "{{FEATURE_CARD_TITLE_3}}",
-      description: "{{FEATURE_CARD_DESC_3}}",
+      icon: "📋",
+      title: "Server Config Examples",
+      description:
+        "Get ready-to-paste Nginx and Apache configuration snippets alongside the header string.",
     },
   ],
 
-  // Related Tools (cross-linking to sibling Jagodana tools for internal SEO)
   relatedTools: [
     {
-      name: "Favicon Generator",
-      url: "https://favicon-generator.jagodana.com",
-      icon: "🎨",
-      description: "Generate all favicon sizes + manifest from any image.",
+      name: "Security Headers Generator",
+      url: "https://security-headers-generator.tools.jagodana.com",
+      icon: "🔐",
+      description: "Generate HSTS, CSP, X-Frame-Options, and more security headers.",
     },
     {
-      name: "Sitemap Checker",
-      url: "https://sitemap-checker.jagodana.com",
-      icon: "🔍",
-      description: "Discover and validate sitemaps on any website.",
+      name: "CORS Headers Generator",
+      url: "https://cors-headers-generator.tools.jagodana.com",
+      icon: "🌐",
+      description: "Build correct CORS headers for cross-origin resource sharing.",
     },
     {
-      name: "Regex Playground",
-      url: "https://regex-playground.jagodana.com",
-      icon: "🧪",
-      description: "Build, test & debug regular expressions in real-time.",
+      name: "HTTP Status Debugger",
+      url: "https://http-status-debugger.tools.jagodana.com",
+      icon: "🐛",
+      description: "Decode and fix HTTP status codes instantly.",
     },
     {
-      name: "Screenshot Beautifier",
-      url: "https://screenshot-beautifier.jagodana.com",
-      icon: "📸",
-      description: "Transform screenshots into beautiful images.",
+      name: "JWT Decoder",
+      url: "https://jwt-decoder.tools.jagodana.com",
+      icon: "🔑",
+      description: "Decode and inspect JSON Web Tokens.",
     },
     {
-      name: "Color Palette Explorer",
-      url: "https://color-palette-explorer.jagodana.com",
-      icon: "🎭",
-      description: "Extract color palettes from any image.",
+      name: "CSP Header Generator",
+      url: "https://csp-header-generator.tools.jagodana.com",
+      icon: "🛡️",
+      description: "Build Content Security Policy headers visually.",
     },
     {
-      name: "Logo Maker",
-      url: "https://logo-maker.jagodana.com",
-      icon: "✏️",
-      description: "Create a professional logo in 60 seconds.",
+      name: "Robots.txt Generator",
+      url: "https://robots-txt-generator.tools.jagodana.com",
+      icon: "🤖",
+      description: "Generate a robots.txt file for your site.",
     },
   ],
 
-  // HowTo Steps (drives HowTo JSON-LD schema for rich results)
   howToSteps: [
-    { name: "{{STEP_1_NAME}}", text: "{{STEP_1_TEXT}}", url: "" },
-    { name: "{{STEP_2_NAME}}", text: "{{STEP_2_TEXT}}", url: "" },
-    { name: "{{STEP_3_NAME}}", text: "{{STEP_3_TEXT}}", url: "" },
+    {
+      name: "Select a resource type",
+      text: "Pick the type of resource you want to configure: HTML page, CSS/JS bundle, image, font, or API response.",
+      url: "",
+    },
+    {
+      name: "Configure the directives",
+      text: "Adjust max-age, visibility (public/private), stale-while-revalidate, immutable, and other directives using the controls.",
+      url: "",
+    },
+    {
+      name: "Copy the header",
+      text: "Click Copy to grab the complete Cache-Control header string, or use the Nginx/Apache config snippets directly.",
+      url: "",
+    },
   ],
-  howToTotalTime: "PT2M", // ISO 8601 duration (e.g., PT2M = 2 minutes)
+  howToTotalTime: "PT1M",
 
-  // FAQ (drives both the FAQ UI section and FAQPage JSON-LD schema)
   faq: [
     {
-      question: "{{FAQ_QUESTION_1}}",
-      answer: "{{FAQ_ANSWER_1}}",
+      question: "What is a Cache-Control header?",
+      answer:
+        "Cache-Control is an HTTP header that tells browsers and intermediary caches (like CDNs) how long to store a response and under what conditions to revalidate it. Common directives include max-age (how many seconds to cache), public/private (who can cache it), no-cache (always revalidate before using), and no-store (never cache at all).",
     },
     {
-      question: "{{FAQ_QUESTION_2}}",
-      answer: "{{FAQ_ANSWER_2}}",
+      question: "What is the difference between no-cache and no-store?",
+      answer:
+        "no-cache does not mean 'do not cache' — it means 'cache the response, but always check with the server before using it'. no-store means 'never store this response anywhere'. Use no-cache for frequently updated pages where freshness matters. Use no-store for sensitive data like banking pages or private dashboards that should never be stored.",
     },
     {
-      question: "{{FAQ_QUESTION_3}}",
-      answer: "{{FAQ_ANSWER_3}}",
+      question: "What does stale-while-revalidate do?",
+      answer:
+        "stale-while-revalidate=N tells the browser it can serve a stale (expired) cached response immediately while fetching a fresh copy from the server in the background. This improves perceived performance because the user sees content instantly without waiting for a network round-trip. After N seconds, the background refresh must complete before serving the cached version again.",
     },
     {
-      question: "{{FAQ_QUESTION_4}}",
-      answer: "{{FAQ_ANSWER_4}}",
+      question: "When should I use immutable?",
+      answer:
+        "Use immutable together with a long max-age when you deploy assets with a content hash in the filename (e.g., main.a1b2c3d4.js). The immutable directive tells the browser the file will never change, so it can skip revalidation checks entirely during the cache lifetime. Without a hash-based filename, never use immutable — users would get stale files.",
+    },
+    {
+      question: "What is the difference between max-age and s-maxage?",
+      answer:
+        "max-age controls caching in both browsers and shared caches (CDNs). s-maxage overrides max-age specifically for shared/proxy caches while leaving the browser max-age unchanged. This is useful when you want browsers to revalidate frequently but let your CDN cache responses for longer.",
     },
   ],
 
-  // ====== PAGES (for sitemap + per-page SEO) ======
-  // Add every route here. Sitemap and generatePageMetadata() read from this.
   pages: {
     "/": {
-      title: "{{TOOL_TITLE}}",
-      description: "{{TOOL_DESCRIPTION}}",
+      title:
+        "HTTP Cache Headers Generator — Build Cache-Control Headers Instantly",
+      description:
+        "Generate correct Cache-Control headers for HTML, JS, images, fonts, and APIs. Configure max-age, stale-while-revalidate, immutable, and more.",
       changeFrequency: "weekly" as const,
       priority: 1,
     },
-    // Example page (DELETE when starting your tool, or customize)
-    "/about": {
-      title: "About - {{TOOL_NAME}}",
-      description: "Learn more about {{TOOL_NAME}} and how it works.",
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    // "/blog": {
-    //   title: "Blog - {{TOOL_NAME}}",
-    //   description: "Tips, tutorials, and updates about {{TOOL_NAME}}.",
-    //   changeFrequency: "weekly" as const,
-    //   priority: 0.8,
-    // },
   },
 } as const;
 
